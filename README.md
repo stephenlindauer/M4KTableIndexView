@@ -11,15 +11,28 @@ Using Apple's standard control | Using M4KTableIndexView
 ## Installation
 
 1. Copy the files from M4KTableIndexView/ into Xcode.
-2. In your View Controller, add a property for the View:
+2. In your View Controller, add an IBOutlet for the View:
 
-    @IBOutlet weak var indexView: M4KTableIndexView!
+	    @IBOutlet weak var indexView: M4KTableIndexView!
 
 3. Setup the indexView:
 
-    indexView.tableView = self.tableView
-    indexView.indexes = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-    indexView.setup()
+	    indexView.tableView = self.tableView
+	    indexView.indexes = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+	    indexView.setup()
     
-4. Profit
+4. Add a UIView element to your Storyboard positioned next to your UITableView. Connect this to the IBOutlet created in #2.
+5. (Optional) Make your View Controller be the indexView's delegate and implement the delegate method:
+
+
+        class ViewController, UIViewController, **M4KTableIndexDelegate** {
+       
+            ...
+            indexView.delegate = self
+            ...
+
+            func indexDisplayText(for indexPath: IndexPath) -> String {
+                // Return a short string to display on screen
+                return ""
+            }
 

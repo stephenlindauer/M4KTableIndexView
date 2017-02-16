@@ -30,7 +30,7 @@ indexView.setup()
 5. (Optional) Make your View Controller be the indexView's delegate and implement the delegate method:
 
 ```swift
-class ViewController, UIViewController, M4KTableIndexDelegate {
+class ViewController: UIViewController, M4KTableIndexDelegate {
 
 	...
 	indexView.delegate = self

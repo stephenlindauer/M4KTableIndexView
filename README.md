@@ -25,7 +25,7 @@ Using Apple's standard control | Using M4KTableIndexView
 5. (Optional) Make your View Controller be the indexView's delegate and implement the delegate method:
 
 
-        class ViewController, UIViewController, **M4KTableIndexDelegate** {
+        class ViewController, UIViewController, M4KTableIndexDelegate {
        
             ...
             indexView.delegate = self
